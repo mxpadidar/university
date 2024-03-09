@@ -5,6 +5,9 @@ from backbone.domain.enums import EntityType
 
 class AbstractEntity(ABC):
 
+    def __init__(self) -> None:
+        self.events: list = list()
+
     def to_dict(self) -> dict:
         return self.__dict__
 

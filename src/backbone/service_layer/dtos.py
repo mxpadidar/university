@@ -11,6 +11,13 @@ class Command: ...
 class Event: ...
 
 
+@dataclass(frozen=True)
+class UserDto:
+    id: int
+    phone: str
+    university_id: int
+
+
 @dataclass
 class FileDto:
     filename: str
