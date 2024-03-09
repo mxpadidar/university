@@ -1,0 +1,19 @@
+services:
+
+  postgres:
+    image: postgis/postgis:latest
+    env_file:
+      - .env
+    ports:
+      - 5433:5432
+    volumes:
+      - ./.data/postgres:/var/lib/postgresql/data
+
+  minio:
+    image: minio/minio
+    volumes:
+      - ./.data/minio:/data
+    ports:
+      - 9000:9000
+
+    command: server /data
